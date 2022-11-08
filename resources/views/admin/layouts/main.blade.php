@@ -31,15 +31,7 @@
   </nav>
   <!-- /.navbar -->
 
-  <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-dark-primary elevation-4">
-
-    <div class="sidebar">
-
-    </div>
-    <!-- /.sidebar -->
-  </aside>
-
+  @include('admin.includes.sidebar')
   @yield('content')
 
   <footer class="main-footer">
