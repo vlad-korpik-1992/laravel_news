@@ -20,10 +20,11 @@ Route::group(['namespace' => 'Main'], function(){
 
 Route::group(['namespace' => 'Admin', 'prefix' => 'manager'], function(){
     Route::group(['namespace' => 'Main'], function(){
-        Route::get('/', 'IndexController');
+        Route::get('/', 'IndexController')->name('admin.main.index');
     });
     Route::group(['namespace' => 'Category', 'prefix' => 'categories'], function(){
-        Route::get('/', 'IndexController');
+        Route::get('/', 'IndexController')->name('admin.categories.index');
+        Route::get('/create', 'CreateController')->name('admin.categories.create');
     });
 });
 
