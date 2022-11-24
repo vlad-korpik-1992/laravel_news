@@ -48,6 +48,15 @@
                                     <td>{{ $category->title }}</td>
                                     <td><a href="{{ route('admin.category.show', $category->id) }}"><i class="fa fa-eye" aria-hidden="true"></i></a></td>
                                     <td><a class="text-success" href="{{ route('admin.category.edit', $category->id) }}"><i class="fas fa-pencil-alt"></i></a></td>
+                                    <td>
+                                        <form action="{{ route('admin.category.delete', $category->id) }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="border-0 bg-transparent text-danger" role="button">
+                                                <i class="fa fa-trash" aria-hidden="true"></i>
+                                            </button>
+                                        </form>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>
