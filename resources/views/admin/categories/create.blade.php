@@ -12,7 +12,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{ route('admin.main.index') }}">Главная</a></li>
-              <li class="breadcrumb-item"><a href="{{route('admin.categories.index')}}">Категории</a></li>
+              <li class="breadcrumb-item"><a href="{{route('admin.category.index')}}">Категории</a></li>
               <li class="breadcrumb-item active">Добавление категории</li>
             </ol>
           </div><!-- /.col -->
@@ -27,9 +27,13 @@
         <!-- Small boxes (Stat box) -->
         <div class="row">
             <div class="col-12">
-                <form class="w-25" action="#">
+                <form class="w-25" action="{{ route('admin.category.store') }}" method="POST">
+                    @csrf
                     <div class="form-group">
-                        <input class="form-control" type="text" name="category" placeholder="Название категории">
+                        <input class="form-control" type="text" name="title" placeholder="Название категории">
+                        @error('title')
+                            <div class="text-danger">Это поле обязательно для заполнения</div>
+                        @enderror
                     </div>
                     <input class="btn btn-block btn-primary w-50" type="submit" value="Добавить">
                 </form>

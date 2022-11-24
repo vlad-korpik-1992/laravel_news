@@ -26,7 +26,7 @@
         <!-- Small boxes (Stat box) -->
         <div class="row">
             <div class="col-3">
-                <a href="{{ route('admin.categories.create') }}" class="btn btn-block btn-primary">Добавить категорию</a>
+                <a href="{{ route('admin.category.create') }}" class="btn btn-block btn-primary">Добавить категорию</a>
             </div>
         </div>
         <!-- /.row -->

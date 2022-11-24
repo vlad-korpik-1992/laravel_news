@@ -23,8 +23,9 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'manager'], function(){
         Route::get('/', 'IndexController')->name('admin.main.index');
     });
     Route::group(['namespace' => 'Category', 'prefix' => 'categories'], function(){
-        Route::get('/', 'IndexController')->name('admin.categories.index');
-        Route::get('/create', 'CreateController')->name('admin.categories.create');
+        Route::get('/', 'IndexController')->name('admin.category.index');
+        Route::get('/create', 'CreateController')->name('admin.category.create');
+        Route::post('/', 'StoreController')->name('admin.category.store');
     });
 });
 
