@@ -8,9 +8,9 @@ use Illuminate\Http\Request;
 
 class DeleteController extends Controller
 {
-    public function __invoke(User $category)
+    public function __invoke(User $user)
     {
-        $category->delete();
+        $user->delete();
         return redirect(route('admin.user.index'));
     }
 }

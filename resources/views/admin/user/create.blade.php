@@ -32,7 +32,19 @@
                     <div class="form-group">
                         <input class="form-control" type="text" name="name" placeholder="Имя пользователя">
                         @error('name')
-                            <div class="text-danger">Это поле обязательно для заполнения</div>
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="email" placeholder="Ваш email">
+                        @error('email')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="password" placeholder="Ваш пароль">
+                        @error('password')
+                            <div class="text-danger">{{ $message }}</div>
                         @enderror
                     </div>
                     <input class="btn btn-block btn-primary w-50" type="submit" value="Добавить">

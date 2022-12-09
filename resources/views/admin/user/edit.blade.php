@@ -32,10 +32,16 @@
                     @method('PATCH')
                     <div class="form-group">
                         <input class="form-control" type="text" name="name" value="{{ $user->name }}" placeholder="Имя пользователя">
+                        @error('name')
+                            <div class="text-danger">{{ $message}}</div>
+                        @enderror
                     </div>
-                    @error('name')
-                        <div class="text-danger">Это поле обязательно для заполнения</div>
-                    @enderror
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="email" value="{{ $user->email }}" placeholder="Имя пользователя">
+                        @error('email')
+                            <div class="text-danger">{{ $message}}</div>
+                        @enderror
+                    </div>
                     <input class="btn btn-block btn-primary w-50" type="submit" value="Обновить">
                 </form>
             </div>
